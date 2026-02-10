@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortex Data Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Using proper markdown rendering library -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Cortex Assistant</span>
+            </div>
+            <div class="user-profile">
+                <!-- Placeholder for user profile if needed -->
+            </div>
+        </header>
+        
+        <main class="chat-container" id="chat-container">
+            <div class="welcome-message">
+                <h1>Welcome to Cortex Data Assistant</h1>
+                <p>Ask me anything about your Cortex Data Foundation tables.</p>
+                <div class="suggestions">
+                    <button onclick="setInput('Show me the K9 reporting datasets')">Show K9 datasets</button>
+                    <button onclick="setInput('Count records in CORTEX_SAP_REPORTING.SalesOrders')">Count Sales Orders</button>
+                    <button onclick="setInput('List the top 5 customers by revenue')">Top Customers</button>
+                </div>
+            </div>
+            <!-- Messages will be appended here -->
+        </main>
+
+        <div class="input-area">
+            <div class="input-wrapper">
+                <textarea id="user-input" placeholder="Type your query here..." rows="1" oninput="autoResize(this)"></textarea>
+                <button id="send-btn" onclick="sendMessage()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 2L11 13M22 2L15 22L11 13M11 13L2 9L22 2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>

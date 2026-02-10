@@ -1,0 +1,7 @@
+fastmcp
+google-genai
+google-cloud-bigquery
+pandas
+fastapi
+uvicorn
+db-dtypes
